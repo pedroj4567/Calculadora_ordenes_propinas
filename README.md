@@ -7,5 +7,7 @@ Este es un proyecto personal que tiene como enfoque aplicar conocimientos basico
 2. Implementacion y uso de useCallback.
 3. Tipado de props y uso correcto de customHooks para separar logica de negocio y vista. 
 
+Si quieres usar la aplicacion en vivo, entra aca -> [Demo de la app web](orderandtipsmanager.netlify.app).
+
 ![image](https://github.com/user-attachments/assets/d5829b7b-041c-4cd7-930b-fedea2a98145)
 

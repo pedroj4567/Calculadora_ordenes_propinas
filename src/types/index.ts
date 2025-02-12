@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { OrderActions } from "../reducers/order-reducer";
 
 export interface MenuItem {
   id: number;
@@ -18,21 +19,21 @@ export type OrderItem = MenuItem & {
 
 export interface MenuItemsProps {
   item: MenuItem;
-  addItem: (item: MenuItem) => void;
+  dispatch: Dispatch<OrderActions>;
 }
 
 export interface OrderContentsProps {
   orders: OrderItem[];
-  removeItem: (id: MenuItem["id"]) => void;
+  dispatch: Dispatch<OrderActions>;
 }
 
 export interface OrderTotalProps {
   orders: OrderItem[];
   tips: number;
-  saveOrder: () => void;
+  dispatch: Dispatch<OrderActions>;
 }
 
 export interface TipPercentajeFormProps {
   tips: number;
-  setTip: Dispatch<SetStateAction<number>>;
+  dispatch: Dispatch<OrderActions>;
 }

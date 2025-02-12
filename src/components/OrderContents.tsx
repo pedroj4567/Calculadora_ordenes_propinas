@@ -1,7 +1,7 @@
 import { formarCurrency } from "../helpers/formatCurrency";
 import { OrderContentsProps } from "../types";
 
-const OrderContents = ({ orders, removeItem }: OrderContentsProps) => {
+const OrderContents = ({ orders, dispatch }: OrderContentsProps) => {
   return (
     <div>
       <h2 className="font-black text-4xl">Consumo</h2>
@@ -24,7 +24,14 @@ const OrderContents = ({ orders, removeItem }: OrderContentsProps) => {
               </div>
               <button
                 className="bg-red-600 w-8 h-8 rounded-full text-white"
-                onClick={() => removeItem(orderItem.id)}
+                onClick={() =>
+                  dispatch({
+                    type: "remove-item",
+                    payload: {
+                      idItem: orderItem.id,
+                    },
+                  })
+                }
               >
                 x
               </button>

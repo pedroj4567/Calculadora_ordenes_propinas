@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { OrderTotalProps } from "../types";
 import { formarCurrency } from "../helpers/formatCurrency";
 
-export const OrderTotals = ({ orders, tips, saveOrder }: OrderTotalProps) => {
+export const OrderTotals = ({ orders, tips, dispatch }: OrderTotalProps) => {
   // USANDO USEMEMO -> RETORNA EL RESULTADO DE UNA FUNCION, QUE SE GUARDO EN MEMORIA
   //   const subTotalAmount = useMemo(
   //     () =>
@@ -66,7 +66,7 @@ export const OrderTotals = ({ orders, tips, saveOrder }: OrderTotalProps) => {
       <button
         className="w-full bg-black p-3 uppercase text-white font-bold mt-10 disabled:opacity-10 disabled:cursor-not-allowed cursor-pointer"
         disabled={totalAmount() === 0}
-        onClick={() => saveOrder()}
+        onClick={() => dispatch({ type: "place-order" })}
       >
         Guardar Orden
       </button>
